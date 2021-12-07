@@ -1,3 +1,7 @@
+var print = function (s) {
+  console.log(s);
+};
+
 let etc = [1,2,3]
 
 console.log(typeof [1, 2, 3]) // "object" 数组属于一种特殊的对象。
@@ -29,4 +33,27 @@ b.forEach(function (x, i) {
 });
 console.log(a)
 
+// bad
+var arr = new Array(1, 2);
+// good
+var arr = [1, 2];
 
+var review = ['a', 'a', 'b', 'c', 'b', 'a', 'a'];
+// review.forEach(function(item, index, object) {
+//   if (item === 'a') {
+//     object.splice(index, 1);
+//   }
+// });
+// console.log(review)
+
+// for(let i = 0; i < review.length; i++){
+//   if (review[i] === 'a') {
+//     review.splice(i, 1);
+//   }
+// }
+for(let i = review.length; i >=0;  i--){
+  if (review[i] === 'a') {
+    review.splice(i, 1);
+  }
+}
+print(review)
